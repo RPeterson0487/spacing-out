@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/art/testBG.png" type="Texture" id=2]
 
-[node name="scrollingBackground" type="ParallaxBackground"]
+[node name="Background" type="ParallaxBackground"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2( 1620, 860 )
