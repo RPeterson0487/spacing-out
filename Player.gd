@@ -24,16 +24,14 @@ func control(delta):
 	if Input.is_action_pressed("rotateRight"):
 		rotate(deg2rad(rotationSpeed * delta))
 	
-	var oppositeAngle = velocity.angle() + (PI/2) + PI
-	if Input.is_action_pressed("rotateOpposite"):
-		if velocity.length() != 0:
-			if oppositeAngle > (2 * PI):
-				oppositeAngle -= (2 * PI)
-			if oppositeAngle < 0:
-				oppositeAngle += (2 * PI)
-			if (abs(oppositeAngle - rotation)) < PI && (oppositeAngle - rotation) > 0: # Is this the "original result" in discord?
-				rotate(deg2rad(-rotationSpeed * delta))
-			else:
-				rotate(deg2rad(rotationSpeed * delta))
+	if Input.is_action_pressed("rotateOpposite") && velocity.length() != 0:
+		var oppositeVelocity = velocity * -1
+		var oppositeAngle = fposmod(oppositeVelocity.angle() + (PI / 2), (PI * 2))
+		var wrappedRotation = fposmod(rotation, (PI * 2))
+
+		if (abs(wrappedRotation - oppositeAngle)) < PI && (wrappedRotation - oppositeAngle) > 0 or (abs(wrappedRotation - oppositeAngle)) > PI && (wrappedRotation - oppositeAngle) < 0:
+			rotate(deg2rad(-rotationSpeed * delta))
+		else:
+			rotate(deg2rad(rotationSpeed * delta))
 
 	move_and_slide(velocity)
