@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-var acceleration = 50
-var maxSpeed = 350
-var rotationSpeed = 250
+var acceleration = 10 # Test: 30, 45
+var maxSpeed = 350 # Test 220
+var rotationSpeed = 250 # 45
 var velocity = Vector2.ZERO
 
 
@@ -15,7 +15,6 @@ func control(delta):
 	if Input.is_action_pressed("forwardThrust"):
 		inputVector.y = -1
 		
-	#var inputVector = Vector2(0, Input.get_action_strength("forwardThrust"))
 	velocity += inputVector.rotated(rotation) * acceleration
 	velocity = velocity.limit_length(maxSpeed)
 
