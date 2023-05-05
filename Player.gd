@@ -28,7 +28,9 @@ func control(delta):
 		var oppositeAngle = fposmod(oppositeVelocity.angle() + (PI / 2), (PI * 2))
 		var wrappedRotation = fposmod(rotation, (PI * 2))
 
-		if (abs(wrappedRotation - oppositeAngle)) < PI && (wrappedRotation - oppositeAngle) > 0 or (abs(wrappedRotation - oppositeAngle)) > PI && (wrappedRotation - oppositeAngle) < 0:
+		if (abs(wrappedRotation - oppositeAngle)) < 0.1:
+			rotation = oppositeAngle
+		elif (abs(wrappedRotation - oppositeAngle)) < PI && (wrappedRotation - oppositeAngle) > 0 or (abs(wrappedRotation - oppositeAngle)) > PI && (wrappedRotation - oppositeAngle) < 0:
 			rotate(deg2rad(-rotationSpeed * delta))
 		else:
 			rotate(deg2rad(rotationSpeed * delta))
