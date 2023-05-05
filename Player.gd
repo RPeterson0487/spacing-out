@@ -35,3 +35,6 @@ func control(delta):
 			rotate(deg2rad(rotationSpeed * delta))
 
 	move_and_slide(velocity)
+	
+	if Input.is_action_pressed("shoot"):
+		$LaserCannon.fire()

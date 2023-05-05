@@ -6,7 +6,7 @@ var velocity = Vector2.ZERO
 var parent
 
 func _ready():
-	var direction = parent.global_transorm.x
+	var direction = parent.global_transform.x
 	velocity = direction * (speed + parent.velocity.length())
 	rotation = direction.angle()
 

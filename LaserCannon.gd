@@ -4,7 +4,8 @@ export (PackedScene) var laserBolt
 
 
 func fire():
-	spawnLaser()
+	if $Cooldown.is_stopped():
+		spawnLaser()
 
 
 func spawnLaser():
