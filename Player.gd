@@ -14,6 +14,7 @@ func control(delta):
 	var inputVector = Vector2(0,0)
 	if Input.is_action_pressed("forwardThrust"):
 		inputVector.y = -1
+		print("UP")
 		
 	velocity += inputVector.rotated(rotation) * acceleration
 	velocity = velocity.limit_length(maxSpeed)
