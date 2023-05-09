@@ -34,6 +34,9 @@ func control(delta):
 			rotate(deg2rad(-rotationSpeed * delta))
 		else:
 			rotate(deg2rad(rotationSpeed * delta))
+	
+	if Input.is_action_pressed("fullStop") && velocity.length() <= 75:
+		velocity = Vector2.ZERO
 
 	move_and_slide(velocity)
 	
