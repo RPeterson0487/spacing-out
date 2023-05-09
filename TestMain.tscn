@@ -11,9 +11,5 @@
 [node name="Landable" parent="." instance=ExtResource( 3 )]
 position = Vector2( 571, 1288 )
 
-[node name="Landable2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 801, 1169 )
-scale = Vector2( 0.25, 0.25 )
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 596, 292 )
