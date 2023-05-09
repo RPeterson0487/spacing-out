@@ -1,0 +1,149 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://LandMenu.gd" type="Script" id=1]
+
+[node name="LandMenu" type="Control"]
+pause_mode = 2
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 640.0
+margin_bottom = 360.0
+script = ExtResource( 1 )
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -49.0
+margin_top = -46.0
+margin_right = 49.0
+margin_bottom = 46.0
+
+[node name="Ships" type="Button" parent="Menu"]
+margin_right = 98.0
+margin_bottom = 20.0
+focus_mode = 0
+text = "Ships"
+
+[node name="Commodities" type="Button" parent="Menu"]
+margin_top = 24.0
+margin_right = 98.0
+margin_bottom = 44.0
+focus_mode = 0
+text = "Commodities"
+
+[node name="Hotel" type="Button" parent="Menu"]
+margin_top = 48.0
+margin_right = 98.0
+margin_bottom = 68.0
+focus_mode = 0
+text = "Hotel"
+
+[node name="Launch" type="Button" parent="Menu"]
+margin_top = 72.0
+margin_right = 98.0
+margin_bottom = 92.0
+focus_mode = 0
+text = "Launch"
+
+[node name="Ships" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="BackFromShips" type="Button" parent="Ships"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -21.0
+margin_top = -20.0
+margin_right = 21.0
+focus_mode = 0
+text = "Back"
+
+[node name="Commodities" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="BackFromCommodities" type="Button" parent="Commodities"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -21.0
+margin_top = -20.0
+margin_right = 21.0
+focus_mode = 0
+text = "Back"
+
+[node name="Hotel" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hotel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -41.0
+margin_top = -48.0
+margin_right = 41.0
+margin_bottom = 48.0
+
+[node name="Label" type="Label" parent="Hotel/VBoxContainer"]
+margin_right = 82.0
+margin_bottom = 48.0
+text = "Hotel
+HONK SHOO
+HONK SHOO"
+align = 1
+
+[node name="Rest" type="Button" parent="Hotel/VBoxContainer"]
+margin_top = 52.0
+margin_right = 82.0
+margin_bottom = 72.0
+focus_mode = 0
+text = "Rest"
+
+[node name="BackFromHotel" type="Button" parent="Hotel/VBoxContainer"]
+margin_top = 76.0
+margin_right = 82.0
+margin_bottom = 96.0
+focus_mode = 0
+text = "Back"
+
+[connection signal="pressed" from="Menu/Ships" to="." method="_on_Ships_pressed"]
+[connection signal="pressed" from="Menu/Commodities" to="." method="_on_Commodities_pressed"]
+[connection signal="pressed" from="Menu/Hotel" to="." method="_on_Hotel_pressed"]
+[connection signal="pressed" from="Menu/Launch" to="." method="_on_Launch_pressed"]
+[connection signal="pressed" from="Ships/BackFromShips" to="." method="_on_BackFromShips_pressed"]
+[connection signal="pressed" from="Commodities/BackFromCommodities" to="." method="_on_BackFromCommodities_pressed"]
+[connection signal="pressed" from="Hotel/VBoxContainer/Rest" to="." method="_on_Rest_pressed"]
+[connection signal="pressed" from="Hotel/VBoxContainer/BackFromHotel" to="." method="_on_BackFromHotel_pressed"]
