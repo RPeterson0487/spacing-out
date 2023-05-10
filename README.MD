@@ -10,8 +10,7 @@ https://youtu.be/iq4eOaox5Oo
 <br><br>
 
 ## Problems / Questions
-- Hotel stay should reset the main scene with player spawning in center of landable
 - Font size for all (and style?)
-- Landable different size and appearance (appearance is more important)
+- Landable different size
 - Multiple Lasers
 - Is using a second label for longer descriptions the best idea

@@ -9,6 +9,10 @@ onready var menuArray = [ships, commodities, hotel]
 var inOrbit = false
 
 
+func _ready():
+	connectLandables()
+
+
 func _process(delta):
 	if Input.is_action_just_pressed("land") and inOrbit == true:
 		if !visible:
@@ -68,9 +72,25 @@ func _on_Launch_pressed():
 	hideLandingMenu()
 
 
-func _on_Landable_body_entered(body):
+func connectLandables():
+	for i in get_tree().get_nodes_in_group("landableGroup"):
+		i.connect("enteredOrbit", self, "handleInOrbit")
+		i.connect("exitedOrbit", self, "handleExitOrbit")
+
+
+func handleInOrbit():
 	inOrbit = true
 
-
-func _on_Landable_body_exited(body):
+func handleExitOrbit():
 	inOrbit = false
+
+
+
+
+
+#func _on_Landable_body_entered(body):
+#	inOrbit = true
+#
+#
+#func _on_Landable_body_exited(body):
+#	inOrbit = false

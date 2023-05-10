@@ -13,23 +13,20 @@
 [node name="Background" parent="." instance=ExtResource( 1 )]
 
 [node name="Landable" parent="." instance=ExtResource( 3 )]
-position = Vector2( 605, 1315 )
+position = Vector2( 296, 482 )
 planetSprite = ExtResource( 5 )
 
 [node name="Landable2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 891, 1090 )
+position = Vector2( 654, 290 )
 planetSprite = ExtResource( 6 )
 
 [node name="Landable3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1076, 1374 )
+position = Vector2( 1053, 537 )
 planetSprite = ExtResource( 7 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 596, 292 )
+position = Vector2( 658, 554 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LandMenu" parent="CanvasLayer" instance=ExtResource( 4 )]
-
-[connection signal="body_entered" from="Landable" to="CanvasLayer/LandMenu" method="_on_Landable_body_entered"]
-[connection signal="body_exited" from="Landable" to="CanvasLayer/LandMenu" method="_on_Landable_body_exited"]
