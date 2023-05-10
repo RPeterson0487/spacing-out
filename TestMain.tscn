@@ -15,9 +15,12 @@ position = Vector2( 571, 1288 )
 [node name="Landable2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1004, 1291 )
 
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 596, 292 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LandMenu" parent="CanvasLayer" instance=ExtResource( 4 )]
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 596, 292 )
+[connection signal="body_entered" from="Landable" to="CanvasLayer/LandMenu" method="_on_Landable_body_entered"]
+[connection signal="body_exited" from="Landable" to="CanvasLayer/LandMenu" method="_on_Landable_body_exited"]

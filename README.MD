@@ -6,8 +6,8 @@
 
 ## Problems
 - Menu toggling
-- Should only activate when "in orbit"
 - Font size for all (and style?)
 - Landable different size and appearance (appearance is more important)
 - Views like in HaxeFlixel?
 - Multiple Lasers
+- Is using a second label for longer descriptions the best idea

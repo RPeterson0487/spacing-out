@@ -5,19 +5,31 @@ onready var ships = $Ships
 onready var commodities = $Commodities
 onready var hotel = $Hotel
 
-
-func _ready():
-	print("Load Scene")
+onready var menuArray = [ships, commodities, hotel]
+var inOrbit = false
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("land"):
-		toggleLandingMenu()
+	if Input.is_action_just_pressed("land") and inOrbit == true:
+		if !visible:
+			showLandingMenu()
+		else:
+			hideLandingMenu()
 
 
-func toggleLandingMenu():
-	visible = !visible
-	get_tree().paused = visible
+func showLandingMenu():
+	visible = true
+	get_tree().paused = true
+
+
+func hideLandingMenu():
+	for i in menuArray:
+		print(i)
+		i.hide()
+		
+	menu.show()
+	visible = false
+	get_tree().paused = false
 
 
 func changeMenuLevel(from, to):
@@ -54,7 +66,12 @@ func _on_BackFromHotel_pressed():
 
 
 func _on_Launch_pressed():
-	toggleLandingMenu()
+	hideLandingMenu()
 
 
+func _on_Landable_body_entered(body):
+	inOrbit = true
 
+
+func _on_Landable_body_exited(body):
+	inOrbit = false
