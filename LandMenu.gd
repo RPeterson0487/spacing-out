@@ -24,10 +24,9 @@ func showLandingMenu():
 
 func hideLandingMenu():
 	for i in menuArray:
-		print(i)
 		i.hide()
-		
 	menu.show()
+	
 	visible = false
 	get_tree().paused = false
 
@@ -58,8 +57,8 @@ func _on_Hotel_pressed():
 
 
 func _on_Rest_pressed():
-	get_tree().reload_current_scene() # This needs to be changed to reload the main scene once added to it.
-
+	# get_tree().reload_current_scene() # This needs to be changed to reload the main scene once added to it.
+	pass
 
 func _on_BackFromHotel_pressed():
 	changeMenuLevel(hotel, menu)
