@@ -7,7 +7,7 @@ onready var hotel = $Hotel
 
 onready var menuArray = [ships, commodities, hotel]
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if visible and Input.is_action_just_pressed("ui_cancel"):
 		hideLandingMenu()
 
