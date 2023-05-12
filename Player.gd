@@ -1,9 +1,15 @@
 extends KinematicBody2D
 
+class_name Player
+
 var acceleration = 10 # Test: 30, 45
 var maxSpeed = 350 # Test 220
 var rotationSpeed = 250 # 45
+
 var velocity = Vector2.ZERO
+var onLandable = false
+
+signal openLandingMenu
 
 
 func _physics_process(delta):
@@ -43,3 +49,18 @@ func control(delta):
 	
 	if Input.is_action_pressed("shoot"):
 		$LaserCannon.fire()
+	
+	if Input.is_action_just_pressed("land") and onLandable == true:
+		emit_signal("openLandingMenu")
+		print("Player: Emitting toggleLandingMenu")
+
+
+
+func enterOrbit():
+	print("Player: Setting onLandable to True")
+	onLandable = true
+
+
+func exitOrbit():
+	print("Player: Setting onLandable to False")
+	onLandable = false

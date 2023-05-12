@@ -6,27 +6,20 @@ onready var commodities = $Commodities
 onready var hotel = $Hotel
 
 onready var menuArray = [ships, commodities, hotel]
-var inOrbit = false
 
-
-func _ready():
-	connectLandables()
-
-
-func _process(delta):
-	if Input.is_action_just_pressed("land") and inOrbit == true:
-		if !visible:
-			showLandingMenu()
-		else:
-			hideLandingMenu()
+func _physics_process(delta):
+	if visible and Input.is_action_just_pressed("ui_cancel"):
+		hideLandingMenu()
 
 
 func showLandingMenu():
+	
 	visible = true
 	get_tree().paused = true
 
 
 func hideLandingMenu():
+	print("LandMenu: Launch clicked, resetting menu and setting visible to False.")
 	for i in menuArray:
 		i.hide()
 	menu.show()
@@ -70,27 +63,3 @@ func _on_BackFromHotel_pressed():
 
 func _on_Launch_pressed():
 	hideLandingMenu()
-
-
-func connectLandables():
-	for i in get_tree().get_nodes_in_group("landableGroup"):
-		i.connect("enteredOrbit", self, "handleInOrbit")
-		i.connect("exitedOrbit", self, "handleExitOrbit")
-
-
-func handleInOrbit():
-	inOrbit = true
-
-func handleExitOrbit():
-	inOrbit = false
-
-
-
-
-
-#func _on_Landable_body_entered(body):
-#	inOrbit = true
-#
-#
-#func _on_Landable_body_exited(body):
-#	inOrbit = false

@@ -1,20 +1,18 @@
 extends Area2D
 
-signal enteredOrbit
-signal exitedOrbit
-
 export(Texture) var planetSprite
 
 func _ready():
 	$Sprite.texture = planetSprite
 
 
-
 func _on_Landable_body_entered(body):
-	print("Landable: Body Entered")
-	emit_signal("enteredOrbit")
+	if body is Player:
+		print("Landable: ", body.name, " has entered ", name, "'s orbit.  Calling Player.enterOrbit.")
+		body.enterOrbit()
 
 
 func _on_Landable_body_exited(body):
-	print("Landable: Body Exited")
-	emit_signal("exitedOrbit")
+	if body is Player:
+		print("Landable: ", body.name, " has left ", name, "'s orbit.  Calling Player.exitOrbit.")
+		body.exitOrbit()

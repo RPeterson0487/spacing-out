@@ -139,6 +139,9 @@ margin_bottom = 96.0
 focus_mode = 0
 text = "Back"
 
+[node name="ExitTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="pressed" from="Menu/Ships" to="." method="_on_Ships_pressed"]
 [connection signal="pressed" from="Menu/Commodities" to="." method="_on_Commodities_pressed"]
 [connection signal="pressed" from="Menu/Hotel" to="." method="_on_Hotel_pressed"]
