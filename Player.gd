@@ -55,15 +55,12 @@ func control(delta):
 	
 	if Input.is_action_just_pressed("land") and onLandable == true:
 		emit_signal("openLandingMenu")
-		print("Player: Emitting toggleLandingMenu")
 
 
 
 func enterOrbit():
-	print("Player: Setting onLandable to True")
 	onLandable = true
 
 
 func exitOrbit():
-	print("Player: Setting onLandable to False")
 	onLandable = false

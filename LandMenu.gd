@@ -19,7 +19,6 @@ func showLandingMenu():
 
 
 func hideLandingMenu():
-	print("LandMenu: Launch clicked, resetting menu and setting visible to False.")
 	for i in menuArray:
 		i.hide()
 	menu.show()
