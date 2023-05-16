@@ -20,4 +20,3 @@ func setupLandables():
 		
 		instance.position = spawnPosition
 		add_child(instance)
-		print(instance.name, ": ", instance.global_position)
