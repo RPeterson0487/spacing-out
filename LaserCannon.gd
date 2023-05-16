@@ -21,6 +21,7 @@ func spawnLaser():
 	instance.global_position = global_position
 	instance.rotation = global_rotation
 	# instance.parent = get_parent() # if the laser class needs to know what its parent is, this is the spot to do it in.
-	
+	instance.z_as_relative = true
+	instance.z_index = -1
 	var sceneRoot = get_tree().root.get_children()[0]
 	sceneRoot.add_child(instance)

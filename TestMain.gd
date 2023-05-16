@@ -18,5 +18,7 @@ func setupLandables():
 		var spawnPosition = center + distance.rotated(deg2rad(rand_range(0,360)))
 		var instance = landableScene.instance()
 		
+		instance.z_as_relative = true
+		instance.z_index = -1
 		instance.position = spawnPosition
 		add_child(instance)
