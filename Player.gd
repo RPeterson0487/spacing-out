@@ -2,12 +2,14 @@ extends KinematicBody2D
 
 class_name Player
 
+onready var weaponArray = [$LaserCannon, $LaserCannon2, $LaserCannon3]
 var acceleration = 10 # Test: 30, 45
 var maxSpeed = 350 # Test 220
 var rotationSpeed = 250 # 45
 
 var velocity = Vector2.ZERO
 var onLandable = false
+var fireModeStaggered = false
 
 signal openLandingMenu
 
@@ -47,9 +49,9 @@ func control(delta):
 
 	move_and_slide(velocity)
 	
-	if Input.is_action_pressed("shoot"):
-		$LaserCannon.fire()
-		print(name, ": ", global_position)
+	if Input.is_action_pressed("shoot") and weaponArray.size() != 0:
+		for i in weaponArray:
+			i.fire()
 	
 	if Input.is_action_just_pressed("land") and onLandable == true:
 		emit_signal("openLandingMenu")
