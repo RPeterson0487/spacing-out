@@ -21,3 +21,9 @@ current = true
 
 [node name="LaserCannon" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, -12 )
+
+[node name="LaserCannon2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -9, 10 )
+
+[node name="LaserCannon3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 9, 10 )
