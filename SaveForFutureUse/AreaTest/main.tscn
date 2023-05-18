@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4i1bu2o6xtti"]
+
+[ext_resource type="Script" path="res://WorldBoundary.gd" id="2_4i354"]
+[ext_resource type="Script" path="res://Player.gd" id="2_4rqlv"]
+[ext_resource type="Texture2D" uid="uid://cuhk7wis1p12c" path="res://icon.svg" id="2_ri03t"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_viaq0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c4bu6"]
+radius = 18.0278
+
+[node name="Main" type="Node2D"]
+
+[node name="WorldBoundary" type="StaticBody2D" parent="."]
+position = Vector2(582, 318)
+script = ExtResource("2_4i354")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary"]
+position = Vector2(-582, -318)
+shape = SubResource("SegmentShape2D_viaq0")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(583, 318)
+script = ExtResource("2_4rqlv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ri03t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_c4bu6")

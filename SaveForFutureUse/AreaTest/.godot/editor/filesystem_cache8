@@ -1,0 +1,7 @@
+2a60927148abd1d33b818b535e306557
+::res://::1684360304
+icon.svg::CompressedTexture2D::6191734368483230936::1684319319::1684359771::1::::<><>::
+Main.gd::GDScript::-1::1684323826::0::1::::<>Node2D<>::
+main.tscn::PackedScene::9212835059075724546::1684360296::0::1::::<><>::res://WorldBoundary.gd<>res://Player.gd<>uid://cuhk7wis1p12c
+Player.gd::GDScript::-1::1684352723::0::1::::<>CharacterBody2D<>::
+WorldBoundary.gd::GDScript::-1::1684353293::0::1::::<>StaticBody2D<>::
