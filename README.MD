@@ -1,6 +1,6 @@
 # SPACING OUT
 
-This is my (WIP) take on Escape Veocity, a game I loved when I was a kid. This was started as a class project for Video Game Development at Missouri State University, and I plan to continue messing with it as time allows.
+This is my (WIP) take on Escape Velocity, a game I loved when I was a kid. This was started as a class project for Video Game Development at Missouri State University, and I plan to continue messing with it as time allows.
 
 ![Screenshot](https://raw.githubusercontent.com/RPeterson0487/spacing-out/main/ReadmeAssets/Screenshot.png)
 <br><br>
@@ -11,7 +11,7 @@ Spacing Out will eventually be a top-down space trucking and combat game with a 
 
 You can find this and any other games I make [here at Itch.io.](https://zetapirate.itch.io/ "My Itch.io profile")
 
-Or you can play it [here on github.](https://rpeterson0487.github.io/spacing-out/ "Github pages page")
+Or you can play it [here on GitHub.](https://rpeterson0487.github.io/spacing-out/ "GitHub pages page")
 <br><br>
 
 ## Controls:
@@ -24,7 +24,7 @@ Forward thrust. You're in space, so the ship will continue to move until you cha
 ### LEFT or A, and RIGHT or D:
 Rotate left or right.
 ### DOWN or S:
-Rotate opposite direction of travel. This will automatically rotate your ship to face opposite of the direction the ship is moving so that you can slow down.
+Rotate opposite direction of travel. This will automatically rotate your ship to face opposite of the direction the ship is moving in so that you can slow down.
 ### X:
 Full stop: If you are moving slow enough, pressing this key will bring the ship to a full stop, regardless of the direction you are facing. Take that, Newton!
 ### L:
